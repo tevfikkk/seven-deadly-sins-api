@@ -10,8 +10,8 @@ const characterSchema = new Schema({
   race: String,
   age: Number,
   blood_type: String,
-  height: Schema.Types.Decimal128,
-  weight: Schema.Types.Decimal128,
+  height: Number,
+  weight: Number,
   hair_color: String,
   eye_color: String,
   power_level: {

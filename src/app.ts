@@ -5,6 +5,7 @@ import mongoose from 'mongoose'
 import multer from 'multer'
 import path from 'path'
 
+import { charRouter } from './controllers/characterController'
 import { MONGO_URI } from './utils/config'
 import { errorMessage, info } from './utils/logger'
 import {
@@ -33,9 +34,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(requestLogger)
 
 //! Routes
-app.get('/', (req, res) => {
-  res.json({ message: 'anima anime app' })
-})
+app.use('/api/chars', charRouter)
 
 //! Error handling
 app.use(unknownEndpoint)
